@@ -1,0 +1,11 @@
+pipeline {
+    agent any   // Runs on any available agent (slave)
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Running build on any agent'
+            }
+        }
+    }
+}
