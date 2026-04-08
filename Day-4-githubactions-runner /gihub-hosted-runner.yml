@@ -1,0 +1,20 @@
+#runs-on: ubuntu-latest → Automatically runs on a GitHub-provided VM
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # GitHub-hosted Linux runner
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: echo "Building the project on a GitHub-hosted runner"
+
+      - name: Test
+        run: echo "Running tests on GitHub-hosted runner"
