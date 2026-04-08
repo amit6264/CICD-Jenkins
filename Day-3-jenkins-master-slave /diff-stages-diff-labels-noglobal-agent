@@ -1,0 +1,26 @@
+pipeline {
+    agent none   // No global agent
+
+    stages {
+        stage('Build') {
+            agent { label 'build-node' }
+            steps {
+                echo 'Running build on build-node'
+            }
+        }
+
+        stage('Test') {
+            agent { label 'test-node' }
+            steps {
+                echo 'Running tests on test-node'
+            }
+        }
+
+        stage('Deploy') {
+            agent { label 'deploy-node' }
+            steps {
+                echo 'Deploying from deploy-node'
+            }
+        }
+    }
+}
