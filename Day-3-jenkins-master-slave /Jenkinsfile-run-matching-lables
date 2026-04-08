@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+        label 'linux'   // Must match agent label
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Running on Linux slave'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing on Linux slave'
+            }
+        }
+    }
+}
